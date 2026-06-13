@@ -1092,7 +1092,7 @@ section {
 }
 
 .timeline-content {
-    background: #000000;
+    background: var(--bg-main);
     padding: 1.25rem 1.5rem;
     border-radius: var(--radius-xs);
     border: 2px solid var(--border-card);
@@ -1126,8 +1126,8 @@ section {
     display: inline-block;
     font-size: 0.8rem;
     font-weight: 700;
-    background: #110004;
-    color: var(--text-primary);
+    background: rgba(255, 0, 60, 0.08);
+    color: var(--neon-pink);
     padding: 0.25rem 0.75rem;
     border-radius: var(--radius-xs);
     border: 2px solid var(--border-card);
@@ -1142,7 +1142,7 @@ section {
 }
 
 .cert-card {
-    background: #000000;
+    background: var(--bg-main);
     border: 2px solid var(--border-card);
     border-radius: var(--radius-xs);
     box-shadow: 4px 4px 0px #000000;
