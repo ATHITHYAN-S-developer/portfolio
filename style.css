@@ -519,6 +519,11 @@ canvas#bg-canvas {
     text-shadow: 2px 2px 0px #000000, 4px 4px 0px var(--neon-pink);
 }
 
+.light-neon .hero-title .highlight-alt {
+    color: #000000;
+    text-shadow: 2px 2px 0px #ffffff, 4px 4px 0px var(--neon-pink);
+}
+
 .hero-subtitle {
     font-family: var(--font-subheading);
     font-size: 1.6rem;
