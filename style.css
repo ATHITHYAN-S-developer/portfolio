@@ -1578,14 +1578,15 @@ section {
     margin-bottom: 1.5rem;
 }
 
-.project-tags .tag {
+.project-tags .tag, .modal-techs .tag {
     font-size: 0.75rem;
     font-weight: 700;
-    background: #000000;
+    background: var(--bg-main);
     border: 2px solid var(--border-card);
-    color: var(--text-secondary);
+    color: var(--text-primary);
     padding: 0.2rem 0.6rem;
     border-radius: var(--radius-xs);
+    transition: background var(--transition-fast), color var(--transition-fast);
 }
 
 .project-footer {
