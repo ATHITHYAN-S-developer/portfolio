@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athithyan S | Aspiring Software Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Athithyan S - Computer Science Engineering Student, Technical Head, and Aspiring Software Developer. Experience with Python, Django, Flutter, and Data Analysis.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-neon">
+    <!-- Custom Cyber Cursor Elements -->
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-outline"></div>
+
+    <!-- Canvas for background fluid/particle animation -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Glowing Blob Background Accents -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Floating Navigation Bar -->
+    <header class="navbar-container">
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="nav-logo">
+                <span class="logo-box">A</span>
+                <span class="logo-text">Athithyan<span class="neon-dot">.</span></span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active" id="nav-home"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#about" class="nav-link" id="nav-about"><i class="fa-solid fa-user"></i> About</a></li>
+                <li><a href="#skills" class="nav-link" id="nav-skills"><i class="fa-solid fa-screwdriver-wrench"></i> Skills</a></li>
+                <li><a href="#projects" class="nav-link" id="nav-projects"><i class="fa-solid fa-laptop-code"></i> Projects</a></li>
+                <li><a href="#achievements" class="nav-link" id="nav-achievements"><i class="fa-solid fa-trophy"></i> Achievements</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-grid">
+                <div class="hero-text-container">
+                    <div class="welcome-badge">
+                        <span class="badge-dot animate-ping"></span>
+                        <span class="badge-text">Available for Internships</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Creative <span class="highlight">Mind</span><br>
+                        Powerful <span class="highlight-alt">Code</span>.
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        Hi, I'm <span class="name-glow">Athithyan S</span>, <br>
+                        <span id="scramble-text" class="text-scramble" data-scramble='["Aspiring Software Developer", "CSE Engineering Student", "Technical Head @ Mindcraftai", "Data Analysis Enthusiast", "Machine Learning Hobbyist"]'>Aspiring Software Developer</span>
+                    </h2>
+                    <p class="hero-desc">
+                        Engineering candidate specializing in crafting full-stack web architectures, building mobile applications, and mining data insights. I design user-centric interfaces backed by robust logic.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            Explore Projects <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="mailto:athithyan659@gmail.com" class="btn btn-secondary">
+                            Get In Touch <i class="fa-solid fa-message"></i>
+                        </a>
+                        <a href="file:///C:/Users/Athithyan/Downloads/ATHITHYAN%20(1).pdf" target="_blank" class="btn btn-tertiary" download="Athithyan_Resume.pdf">
+                            Download CV <i class="fa-solid fa-download"></i>
+                        </a>
+                    </div>
+
+                    <div class="social-pills">
+                        <a href="https://github.com/ATHITHYAN-S-developer" target="_blank" class="social-pill" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com/in/athithyan-engineer" target="_blank" class="social-pill" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i> <span>LinkedIn</span>
+                        </a>
+                        <a href="mailto:athithyan659@gmail.com" class="social-pill" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i> <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive 3D Card / Visual Graphic -->
+                <div class="hero-visual">
+                    <div class="hero-sphere-wrapper">
+                        <div class="glass-device" id="interactive-device">
+                            <div class="device-header">
+                                <div class="device-dot red"></div>
+                                <div class="device-dot yellow"></div>
+                                <div class="device-dot green"></div>
+                                <span class="device-title">athithyan_dev_console.sh</span>
+                            </div>
+                            <div class="device-body">
+                                <p class="console-line"><span class="c-purple">athithyan-s</span> <span class="c-yellow">~</span> $ cat info.json</p>
+                                <p class="console-output">
+                                    {<br>
+                                    &nbsp;&nbsp;<span class="c-pink">"status"</span>: <span class="c-cyan">"Seeking Internship"</span>,<br>
+                                    &nbsp;&nbsp;<span class="c-pink">"college"</span>: <span class="c-cyan">"Velalar College of Engg"</span>,<br>
+                                    &nbsp;&nbsp;<span class="c-pink">"cgpa"</span>: <span class="c-cyan">"7.21"</span>,<br>
+                                    &nbsp;&nbsp;<span class="c-pink">"location"</span>: <span class="c-cyan">"Erode, TN, India"</span>,<br>
+                                    &nbsp;&nbsp;<span class="c-pink">"passions"</span>: [<span class="c-green">"Clean Code"</span>, <span class="c-green">"UI/UX"</span>, <span class="c-green">"ML"</span>]<br>
+                                    }
+                                </p>
+                                <p class="console-line"><span class="c-purple">athithyan-s</span> <span class="c-yellow">~</span> $ npm run dev</p>
+                                <p class="console-output c-green">> starting local development server...</p>
+                                <div class="console-interactive-box">
+                                    <div class="bar-chart">
+                                        <div class="bar-fill" style="--val: 90%; --c: var(--neon-pink)"><span>Python</span></div>
+                                        <div class="bar-fill" style="--val: 85%; --c: var(--neon-blue)"><span>Java</span></div>
+                                        <div class="bar-fill" style="--val: 80%; --c: var(--neon-purple)"><span>JS</span></div>
+                                        <div class="bar-fill" style="--val: 75%; --c: var(--neon-lime)"><span>Django</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glowing-ring"></div>
+                        <div class="glowing-ring-alt"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-down-indicator">
+                <a href="#about" aria-label="Scroll Down">
+                    <span class="mouse-icon">
+                        <span class="mouse-wheel"></span>
+                    </span>
+                    <span class="scroll-text">Scroll Down</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about-section">
+            <h2 class="section-title text-center" data-subtitle="My Profile">Who is Athithyan?</h2>
+            
+            <div class="about-card-container glass-card">
+                <!-- Tabs Sidebar/Header -->
+                <div class="about-tabs">
+                    <button class="about-tab active" data-target="story">
+                        <i class="fa-solid fa-circle-info"></i> My Story
+                    </button>
+                    <button class="about-tab" data-target="education">
+                        <i class="fa-solid fa-graduation-cap"></i> Education
+                    </button>
+                    <button class="about-tab" data-target="certifications">
+                        <i class="fa-solid fa-certificate"></i> Certifications
+                    </button>
+                </div>
+
+                <!-- Tab Content Panel -->
+                <div class="about-content-panel">
+                    <!-- Tab Story -->
+                    <div class="tab-pane active" id="pane-story">
+                        <h3 class="pane-title">Computer Science & Engineering Student</h3>
+                        <p class="pane-desc">
+                            Currently pursuing my Bachelor of Engineering (B.E.) in CSE at Velalar College of Engineering and Technology. With a strong interest in technology, I bridge the gap between abstract computer science theory and concrete, high-impact software solutions.
+                        </p>
+                        <p class="pane-desc">
+                            I enjoy building responsive web applications using Django, crafting fluid mobile layouts using Flutter, and diving into data sets to implement machine learning algorithms (like K-Means segmentation). As the Technical Head of the Mindcraftai Club, I enjoy collaborative problem-solving, organizing bootcamps, and designing AI tools.
+                        </p>
+                        
+                        <div class="story-stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-num">2028</span>
+                                <span class="stat-label">Graduation Year</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-num">7.21</span>
+                                <span class="stat-label">Current CGPA</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-num">NPTEL</span>
+                                <span class="stat-label">HCI Certified</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-num">1st</span>
+                                <span class="stat-label">Hackathon Award</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Education -->
+                    <div class="tab-pane" id="pane-education">
+                        <h3 class="pane-title">Academic Journey</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2024 – 2028</span>
+                                    <h4 class="timeline-title">Velalar College of Engineering and Technology</h4>
+                                    <p class="timeline-sub">Bachelor of Engineering (B.E.) in Computer Science and Engineering</p>
+                                    <div class="timeline-tag">CGPA: 7.21 / 10.0</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Completed 2024</span>
+                                    <h4 class="timeline-title">Kongu Kalvi Nilayam Higher Secondary School</h4>
+                                    <p class="timeline-sub">Higher Secondary Certificate (HSC) - Computer Science Route</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Completed 2022</span>
+                                    <h4 class="timeline-title">Sengunthar Vidhyalaya Matriculation School</h4>
+                                    <p class="timeline-sub">Secondary School Leaving Certificate (SSLC)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Certifications -->
+                    <div class="tab-pane" id="pane-certifications">
+                        <h3 class="pane-title">Professional Certifications</h3>
+                        <div class="certifications-grid">
+                            <div class="cert-card">
+                                <div class="cert-icon-wrapper">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div class="cert-info">
+                                    <h4 class="cert-title">Human Computer Interaction</h4>
+                                    <p class="cert-issuer">NPTEL (IIT Delhi)</p>
+                                    <p class="cert-date">Jan – Apr 2026</p>
+                                    <div class="cert-badge">Score: 86% (Elite + Silver)</div>
+                                </div>
+                            </div>
+                            
+                            <div class="cert-card info-card">
+                                <div class="cert-icon-wrapper text-neon-blue">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                </div>
+                                <div class="cert-info">
+                                    <h4 class="cert-title">Key Learnings</h4>
+                                    <ul class="cert-learnings">
+                                        <li>User-Centered Design Principles</li>
+                                        <li>Prototyping & Heuristic Evaluations</li>
+                                        <li>Cognitive Load & Interface Ergonomics</li>
+                                        <li>Experimental Design & Testing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <h2 class="section-title text-center" data-subtitle="My Sandbox">Interactive Skill Matrix</h2>
+            <p class="section-desc text-center">Click a category or individual skill to filter projects built with that technology.</p>
+            
+            <div class="skills-grid">
+                <!-- Programming Languages -->
+                <div class="skill-category-card glass-card" data-category="programming">
+                    <div class="card-glow-border"></div>
+                    <div class="category-header">
+                        <div class="category-icon pink"><i class="fa-solid fa-code"></i></div>
+                        <h3 class="category-title">Languages</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-badge" data-skill="python">
+                            <i class="fa-brands fa-python"></i> <span>Python</span>
+                        </div>
+                        <div class="skill-badge" data-skill="java">
+                            <i class="fa-brands fa-java"></i> <span>Java</span>
+                        </div>
+                        <div class="skill-badge" data-skill="javascript">
+                            <i class="fa-brands fa-js"></i> <span>JavaScript</span>
+                        </div>
+                        <div class="skill-badge" data-skill="c">
+                            <span class="skill-c-icon">C</span> <span>C Language</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Technologies -->
+                <div class="skill-category-card glass-card" data-category="web">
+                    <div class="card-glow-border"></div>
+                    <div class="category-header">
+                        <div class="category-icon blue"><i class="fa-solid fa-globe"></i></div>
+                        <h3 class="category-title">Web & App</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-badge" data-skill="django">
+                            <i class="fa-solid fa-cubes"></i> <span>Django</span>
+                        </div>
+                        <div class="skill-badge" data-skill="html">
+                            <i class="fa-brands fa-html5"></i> <span>HTML5</span>
+                        </div>
+                        <div class="skill-badge" data-skill="css">
+                            <i class="fa-brands fa-css3-alt"></i> <span>CSS3</span>
+                        </div>
+                        <div class="skill-badge" data-skill="flutter">
+                            <i class="fa-solid fa-mobile-screen-button"></i> <span>Flutter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-category-card glass-card" data-category="database">
+                    <div class="card-glow-border"></div>
+                    <div class="category-header">
+                        <div class="category-icon purple"><i class="fa-solid fa-database"></i></div>
+                        <h3 class="category-title">Databases</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-badge" data-skill="mongodb">
+                            <i class="fa-solid fa-leaf"></i> <span>MongoDB</span>
+                        </div>
+                        <div class="skill-badge" data-skill="mysql">
+                            <i class="fa-solid fa-server"></i> <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="skill-category-card glass-card" data-category="tools">
+                    <div class="card-glow-border"></div>
+                    <div class="category-header">
+                        <div class="category-icon lime"><i class="fa-solid fa-cubes-stacked"></i></div>
+                        <h3 class="category-title">Platforms & Tools</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-badge" data-skill="streamlit">
+                            <i class="fa-solid fa-chart-simple"></i> <span>Streamlit</span>
+                        </div>
+                        <div class="skill-badge" data-skill="git">
+                            <i class="fa-brands fa-git-alt"></i> <span>Git</span>
+                        </div>
+                        <div class="skill-badge" data-skill="github">
+                            <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                        </div>
+                        <div class="skill-badge" data-skill="vscode">
+                            <i class="fa-solid fa-laptop-code"></i> <span>VS Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conceptual Cards -->
+            <div class="concepts-container text-center">
+                <div class="concepts-list">
+                    <span class="concept-tag"><i class="fa-solid fa-brain"></i> Machine Learning</span>
+                    <span class="concept-tag"><i class="fa-solid fa-chart-line"></i> Data Analysis</span>
+                    <span class="concept-tag"><i class="fa-solid fa-gears"></i> Object-Oriented Programming (OOP)</span>
+                    <span class="concept-tag"><i class="fa-solid fa-puzzle-piece"></i> Problem Solving</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section id="projects" class="projects-section">
+            <div class="section-header-wrapper">
+                <h2 class="section-title" data-subtitle="My Creations">Featured Projects</h2>
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                    <button class="filter-btn" data-filter="python">Python</button>
+                    <button class="filter-btn" data-filter="react">React / JS</button>
+                    <button class="filter-btn" data-filter="web">Web Tools</button>
+                </div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Synergia Hackathon Portal -->
+                <article class="project-card glass-card" data-tags='["react", "web", "javascript", "ml"]' data-id="p_synergia">
+                    <div class="project-img-placeholder" style="background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple))">
+                        <div class="project-img-art">
+                            <i class="fa-solid fa-comments card-icon"></i>
+                            <div class="floating-bubbles">
+                                <span class="bubble"></span>
+                                <span class="bubble"></span>
+                                <span class="bubble"></span>
+                            </div>
+                        </div>
+                        <div class="project-category-badge">AI & Web Event Portal</div>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Synergia Hackathon & Event Portal</h3>
+                        <p class="project-desc">
+                            A comprehensive event registration suite built for VCET, integrating an AI Assistant chat agent powered by Gemini AI Studio to handle student queries in real-time.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">React.js</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Gemini AI API</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                        <div class="project-footer">
+                            <button class="btn btn-card-detail" onclick="openProjectModal('p_synergia')">
+                                Details <i class="fa-solid fa-circle-info"></i>
+                            </button>
+                            <a href="https://github.com/ATHITHYAN-S-developer/synergia.git" target="_blank" class="project-icon-link" aria-label="View Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: Tamil/English OCR Extractor -->
+                <article class="project-card glass-card" data-tags='["python", "web", "ocr"]' data-id="p_ocr">
+                    <div class="project-img-placeholder" style="background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple))">
+                        <div class="project-img-art">
+                            <i class="fa-solid fa-language card-icon"></i>
+                            <div class="floating-grid-lines">
+                                <span class="grid-line horizontal"></span>
+                                <span class="grid-line vertical"></span>
+                            </div>
+                        </div>
+                        <div class="project-category-badge">Document Processing OCR</div>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Tamil & English Electoral OCR Extractor</h3>
+                        <p class="project-desc">
+                            An automated data mining application that extracts voter details from bilingual Tamil and English electoral roll tables, parsing them into structured SQLite records.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">pytesseract</span>
+                            <span class="tag">SQLite3</span>
+                        </div>
+                        <div class="project-footer">
+                            <button class="btn btn-card-detail" onclick="openProjectModal('p_ocr')">
+                                Details <i class="fa-solid fa-circle-info"></i>
+                            </button>
+                            <a href="https://github.com/ATHITHYAN-S-developer/OCR-for-tamil-and-english-.git" target="_blank" class="project-icon-link" aria-label="View Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: IPL Action bidding Portal -->
+                <article class="project-card glass-card" data-tags='["react", "web", "javascript"]' data-id="p_ipl">
+                    <div class="project-img-placeholder" style="background: linear-gradient(135deg, var(--neon-blue), var(--neon-lime))">
+                        <div class="project-img-art">
+                            <i class="fa-solid fa-gavel card-icon"></i>
+                            <div class="floating-charts">
+                                <span class="float-bar"></span>
+                                <span class="float-bar"></span>
+                                <span class="float-bar"></span>
+                            </div>
+                        </div>
+                        <div class="project-category-badge">Real-Time Bidding Web</div>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">IPL Bidding & Auction League Portal</h3>
+                        <p class="project-desc">
+                            A live data-driven auction web application featuring role-based logins, player database administration, and instant bid synchronizations across all participant clients.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">React.js</span>
+                            <span class="tag">Vite</span>
+                            <span class="tag">Firebase Firestore</span>
+                            <span class="tag">CSS3</span>
+                        </div>
+                        <div class="project-footer">
+                            <button class="btn btn-card-detail" onclick="openProjectModal('p_ipl')">
+                                Details <i class="fa-solid fa-circle-info"></i>
+                            </button>
+                            <a href="https://github.com/ATHITHYAN-S-developer/ipl-action.git" target="_blank" class="project-icon-link" aria-label="View Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4: Wayanad Trip Expense Manager -->
+                <article class="project-card glass-card" data-tags='["web", "javascript"]' data-id="p_wayanad">
+                    <div class="project-img-placeholder" style="background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink))">
+                        <div class="project-img-art">
+                            <i class="fa-solid fa-wallet card-icon"></i>
+                            <div class="floating-bubbles">
+                                <span class="bubble"></span>
+                                <span class="bubble"></span>
+                                <span class="bubble"></span>
+                            </div>
+                        </div>
+                        <div class="project-category-badge">Collaborative Utility</div>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Wayanad Trip Expense Manager</h3>
+                        <p class="project-desc">
+                            A collaborative expense splitting tracker featuring real-time synchronization, expense distributions, spreadsheet exports, and interactive spending charts.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5/CSS3</span>
+                            <span class="tag">Bootstrap 5</span>
+                            <span class="tag">Chart.js</span>
+                            <span class="tag">Firebase Firestore</span>
+                        </div>
+                        <div class="project-footer">
+                            <button class="btn btn-card-detail" onclick="openProjectModal('p_wayanad')">
+                                Details <i class="fa-solid fa-circle-info"></i>
+                            </button>
+                            <a href="https://github.com/ATHITHYAN-S-developer/wayanad.git" target="_blank" class="project-icon-link" aria-label="View Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5: Customer Spend Segmentation Dashboard -->
+                <article class="project-card glass-card" data-tags='["python", "streamlit", "ml"]' data-id="p_streamlit">
+                    <div class="project-img-placeholder" style="background: linear-gradient(135deg, var(--neon-lime), var(--neon-blue))">
+                        <div class="project-img-art">
+                            <i class="fa-solid fa-chart-pie card-icon"></i>
+                            <div class="floating-charts">
+                                <span class="float-bar"></span>
+                                <span class="float-bar"></span>
+                                <span class="float-bar"></span>
+                            </div>
+                        </div>
+                        <div class="project-category-badge">Data Science Dashboard</div>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Customer Spend Analysis using K-Means</h3>
+                        <p class="project-desc">
+                            An analytical Streamlit web application that uses the K-Means clustering algorithm to group customer transactions based on incomes and spending indexes.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Streamlit</span>
+                            <span class="tag">Scikit-Learn</span>
+                            <span class="tag">Pandas</span>
+                        </div>
+                        <div class="project-footer">
+                            <button class="btn btn-card-detail" onclick="openProjectModal('p_streamlit')">
+                                Details <i class="fa-solid fa-circle-info"></i>
+                            </button>
+                            <a href="https://github.com/ATHITHYAN-S-developer/streamlit-app.git" target="_blank" class="project-icon-link" aria-label="View Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 6: Digital Ads Sales Predictor -->
+                <article class="project-card glass-card" data-tags='["python", "ml"]' data-id="p_sales">
+                    <div class="project-img-placeholder" style="background: linear-gradient(135deg, var(--neon-pink), var(--neon-lime))">
+                        <div class="project-img-art">
+                            <i class="fa-solid fa-bullseye card-icon"></i>
+                            <div class="floating-grid-lines">
+                                <span class="grid-line horizontal"></span>
+                                <span class="grid-line vertical"></span>
+                            </div>
+                        </div>
+                        <div class="project-category-badge">Predictive Analytics ML</div>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Digital Ads Conversion Predictor</h3>
+                        <p class="project-desc">
+                            A machine learning model trained to classify whether a target audience will convert (make a purchase) from a digital ad based on age and income characteristics, achieving 80% accuracy.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-Learn</span>
+                            <span class="tag">Logistic Regression</span>
+                            <span class="tag">Pandas</span>
+                        </div>
+                        <div class="project-footer">
+                            <button class="btn btn-card-detail" onclick="openProjectModal('p_sales')">
+                                Details <i class="fa-solid fa-circle-info"></i>
+                            </button>
+                            <a href="https://github.com/ATHITHYAN-S-developer/sales-prediction-using-machine-learning.git" target="_blank" class="project-icon-link" aria-label="View Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Achievements & Clubs Section -->
+        <section id="achievements" class="achievements-section">
+            <h2 class="section-title text-center" data-subtitle="My Landmarks">Clubs & Achievements</h2>
+            
+            <div class="achievements-grid">
+                <!-- Technical Head Card -->
+                <div class="achievement-card glass-card">
+                    <div class="ach-glow-bg bg-pink"></div>
+                    <div class="ach-icon-wrapper">
+                        <i class="fa-solid fa-chess-knight"></i>
+                    </div>
+                    <div class="ach-details">
+                        <span class="ach-date">2025 - 2026</span>
+                        <h3 class="ach-title">Technical Head</h3>
+                        <h4 class="ach-org">Mindcraftai Club (VCET)</h4>
+                        <p class="ach-desc">
+                            Appointed as the head of technology operations for the AI and programming club. Led student workshops, curated project structures, organized coding challenges, and coordinated hackathons for 200+ members.
+                        </p>
+                        <ul class="ach-bullets">
+                            <li>Organized inter-departmental workshops on AI integration.</li>
+                            <li>Mentored junior teams in python development.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Animation Hackathon Winner -->
+                <div class="achievement-card glass-card">
+                    <div class="ach-glow-bg bg-lime"></div>
+                    <div class="ach-icon-wrapper">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="ach-details">
+                        <span class="ach-date">IIT Bombay Hackathon</span>
+                        <h3 class="ach-title">Animation Hackathon Award</h3>
+                        <h4 class="ach-org">IIT Bombay</h4>
+                        <p class="ach-desc">
+                            Earned the **Consolation Prize** for exceptional project contributions during the national animation and digital media hackathon hosted by IIT Bombay.
+                        </p>
+                        <ul class="ach-bullets">
+                            <li>Developed a creative interactive script linking audio elements to visual vectors.</li>
+                            <li>Engineered real-time rendering logic under a tight 48-hour deadline.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Project Information Modal -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-card glass-card">
+            <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+            <div class="modal-body" id="modal-content-area">
+                <!-- Content injected via Javascript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h3>Athithyan S</h3>
+                <p>Velalar College of Engineering & Technology (CSE '28)</p>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Athithyan S. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
